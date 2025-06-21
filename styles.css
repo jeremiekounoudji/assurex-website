@@ -1,0 +1,371 @@
+/* Custom Styles for AssureX Landing Page */
+
+/* Smooth animations */
+* {
+    scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Hero section animations */
+.hero-content {
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-image {
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+/* Service cards hover effects */
+.service-card {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* WhatsApp button animation */
+.whatsapp-btn {
+    animation: float 3s ease-in-out infinite;
+}
+
+.whatsapp-btn:hover {
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* FAQ accordion animations */
+.faq-item {
+    transition: all 0.3s ease;
+}
+
+.faq-content {
+    transition: max-height 0.3s ease;
+}
+
+/* Custom gradient backgrounds */
+.gradient-primary {
+    background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%);
+}
+
+.gradient-secondary {
+    background: linear-gradient(135deg, #0EA5E9 0%, #06B6D4 100%);
+}
+
+/* Loading animation for forms */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1E40AF;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1E3A8A;
+}
+
+/* Focus states for accessibility */
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+}
+
+/* New animations for redesigned sections */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Service section alternating animations */
+.service-item:nth-child(odd) .service-content {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.service-item:nth-child(even) .service-content {
+    animation: slideInRight 0.8s ease-out;
+}
+
+/* Service images hover effects */
+.service-image {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* FAQ cards enhanced effects */
+.faq-card {
+    transition: all 0.3s ease;
+}
+
+.faq-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Hero section parallax effect */
+.hero-parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Contact form glass effect enhancement */
+.glass-form {
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced button hover effects */
+.btn-primary {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+/* Scroll-triggered animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll.animation-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation variants */
+.animate-fade-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-slide-left {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animate-slide-right {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animate-scale-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Initial states for different animations */
+.animate-on-scroll[data-animation="slide-left"] {
+    transform: translateX(-50px);
+}
+
+.animate-on-scroll[data-animation="slide-right"] {
+    transform: translateX(50px);
+}
+
+.animate-on-scroll[data-animation="scale-in"] {
+    transform: scale(0.9);
+}
+
+/* Enhanced service image effects */
+.service-image {
+    transition: all 0.4s ease;
+}
+
+.service-image:hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Staggered animations for cards */
+.animate-on-scroll[data-delay="100"] {
+    transition-delay: 0.1s;
+}
+
+.animate-on-scroll[data-delay="200"] {
+    transition-delay: 0.2s;
+}
+
+.animate-on-scroll[data-delay="300"] {
+    transition-delay: 0.3s;
+}
+
+.animate-on-scroll[data-delay="400"] {
+    transition-delay: 0.4s;
+}
+
+.animate-on-scroll[data-delay="500"] {
+    transition-delay: 0.5s;
+}
+
+.animate-on-scroll[data-delay="600"] {
+    transition-delay: 0.6s;
+}
+
+.animate-on-scroll[data-delay="700"] {
+    transition-delay: 0.7s;
+}
+
+/* Responsive adjustments for new sections */
+@media (max-width: 1024px) {
+    .service-item {
+        flex-direction: column;
+    }
+    
+    .service-item:nth-child(odd) .service-content,
+    .service-item:nth-child(even) .service-content {
+        animation: fadeInUp 0.8s ease-out;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-parallax {
+        background-attachment: scroll;
+    }
+    
+    .glass-form {
+        backdrop-filter: blur(10px);
+    }
+    
+    /* Reduce animation intensity on mobile */
+    .animate-on-scroll {
+        transform: translateY(20px);
+    }
+    
+    .animate-on-scroll[data-animation="slide-left"],
+    .animate-on-scroll[data-animation="slide-right"] {
+        transform: translateY(20px);
+    }
+} 
