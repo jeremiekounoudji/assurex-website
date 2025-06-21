@@ -164,18 +164,20 @@ function initAnimations() {
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
+            const element = entry.target;
+            const animation = element.getAttribute('data-animation') || 'fade-up';
+            const delay = element.getAttribute('data-delay') || '0';
+            
             if (entry.isIntersecting) {
-                const element = entry.target;
-                const animation = element.getAttribute('data-animation') || 'fade-up';
-                const delay = element.getAttribute('data-delay') || '0';
-                
+                // Add animation when entering viewport
                 setTimeout(() => {
                     element.classList.add(`animate-${animation}`);
                     element.classList.add('animation-visible');
                 }, parseInt(delay));
-                
-                // Stop observing once animated
-                observer.unobserve(element);
+            } else {
+                // Remove animation when leaving viewport (to allow repeat)
+                element.classList.remove(`animate-${animation}`);
+                element.classList.remove('animation-visible');
             }
         });
     }, observerOptions);
