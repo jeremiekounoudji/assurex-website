@@ -386,4 +386,18 @@ select:focus {
     .animate-on-scroll[data-animation="slide-right"] {
         transform: translateY(20px);
     }
+    
+    /* WhatsApp button mobile adjustments */
+    .whatsapp-btn {
+        width: 52px !important;
+        height: 52px !important;
+        bottom: 16px !important;
+        right: 16px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+        z-index: 9999 !important;
+    }
+    
+    .whatsapp-btn i {
+        font-size: 1.4rem !important;
+    }
 } 
