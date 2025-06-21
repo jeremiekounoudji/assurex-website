@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Services - AssureX Insurance Broker</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#1E40AF',
+                        'primary-dark': '#1E3A8A',
+                        'secondary': '#3B82F6'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <img src="logo.jpg" alt="AssureX Logo" class="h-10 w-10 object-contain">
+                    <span class="text-2xl font-bold text-primary">AssureX</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary transition-colors">Accueil</a>
+                    <a href="index.html#about" class="text-gray-700 hover:text-primary transition-colors">À Propos</a>
+                    <a href="services.html" class="text-primary font-semibold">Nos Services</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+                    <a href="tel:+22892125602" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors">
+                        <i class="fas fa-phone mr-2"></i>+228 92 12 56 02
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 bg-white rounded-lg shadow-lg p-4">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-primary transition-colors">Accueil</a>
+                <a href="index.html#about" class="block py-2 text-gray-700 hover:text-primary transition-colors">À Propos</a>
+                <a href="services.html" class="block py-2 text-primary font-semibold">Nos Services</a>
+                <a href="index.html#contact" class="block py-2 text-gray-700 hover:text-primary transition-colors">Contact</a>
+                <a href="tel:+22892125602" class="block py-2 text-primary font-semibold">
+                    <i class="fas fa-phone mr-2"></i>+228 92 12 56 02
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('hero.jpg')">
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-on-scroll" data-animation="fade-up">
+                Nos Services d'Assurance
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 animate-on-scroll" data-animation="fade-up" data-delay="200">
+                Une gamme complète de solutions d'assurance pour protéger ce qui compte le plus pour vous
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll" data-animation="fade-up" data-delay="400">
+                <a href="#services" class="bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-dark transition-colors inline-flex items-center justify-center">
+                    <i class="fas fa-shield-alt mr-2"></i>Découvrir Nos Services
+                </a>
+                <a href="index.html#contact" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors inline-flex items-center justify-center">
+                    <i class="fas fa-phone mr-2"></i>Nous Contacter
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16 animate-on-scroll" data-animation="fade-up">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Tous Nos Services d'Assurance</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    AssureX vous propose une gamme complète de solutions d'assurance adaptées à vos besoins personnels et professionnels
+                </p>
+            </div>
+
+            <div class="space-y-16">
+                <!-- Assurance Automobile -->
+                <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 animate-on-scroll" data-animation="slide-right">
+                    <div class="lg:w-1/2 max-w-lg">
+                        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Assurance Automobile" 
+                             class="w-full h-80 object-cover rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
+                    </div>
+                    <div class="lg:w-1/2 max-w-lg">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Assurance Automobile</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Protégez votre véhicule avec nos formules d'assurance auto complètes. Couverture tous risques, 
+                            responsabilité civile, vol, incendie et assistance 24h/24.
+                        </p>
+                        <ul class="space-y-2 text-gray-600 mb-6">
+                            <li><i class="fas fa-check text-primary mr-2"></i>Responsabilité civile obligatoire</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Protection tous risques</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Assistance dépannage 24h/24</li>
+                        </ul>
+                        <a href="index.html#contact" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors inline-flex items-center">
+                            <i class="fas fa-file-alt mr-2"></i>Demander un Devis
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Assurance Habitation -->
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12 animate-on-scroll" data-animation="slide-left">
+                    <div class="lg:w-1/2 max-w-lg">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Assurance Habitation" 
+                             class="w-full h-80 object-cover rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
+                    </div>
+                    <div class="lg:w-1/2 max-w-lg lg:ml-auto">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Assurance Habitation</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Sécurisez votre domicile et vos biens avec notre assurance habitation complète. 
+                            Protection contre les incendies, dégâts des eaux, cambriolages et catastrophes naturelles.
+                        </p>
+                        <ul class="space-y-2 text-gray-600 mb-6">
+                            <li><i class="fas fa-check text-primary mr-2"></i>Multirisque habitation</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Protection des biens mobiliers</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Responsabilité civile vie privée</li>
+                        </ul>
+                        <a href="index.html#contact" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors inline-flex items-center">
+                            <i class="fas fa-file-alt mr-2"></i>Demander un Devis
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Responsabilité Civile -->
+                <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 animate-on-scroll" data-animation="slide-right">
+                    <div class="lg:w-1/2 max-w-lg">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Responsabilité Civile" 
+                             class="w-full h-80 object-cover rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
+                    </div>
+                    <div class="lg:w-1/2 max-w-lg">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Responsabilité Civile</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Protégez-vous contre les dommages que vous pourriez causer à autrui dans votre vie quotidienne. 
+                            Couverture étendue pour toute la famille.
+                        </p>
+                        <ul class="space-y-2 text-gray-600 mb-6">
+                            <li><i class="fas fa-check text-primary mr-2"></i>Protection familiale complète</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Dommages corporels et matériels</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Défense et recours juridique</li>
+                        </ul>
+                        <a href="index.html#contact" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors inline-flex items-center">
+                            <i class="fas fa-file-alt mr-2"></i>Demander un Devis
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Responsabilité Professionnelle -->
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12 animate-on-scroll" data-animation="slide-left">
+                    <div class="lg:w-1/2 max-w-lg">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Responsabilité Professionnelle" 
+                             class="w-full h-80 object-cover rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
+                    </div>
+                    <div class="lg:w-1/2 max-w-lg lg:ml-auto">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Responsabilité Professionnelle</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Sécurisez votre activité professionnelle avec notre assurance responsabilité civile professionnelle. 
+                            Protection contre les erreurs, omissions et négligences dans l'exercice de votre métier.
+                        </p>
+                        <ul class="space-y-2 text-gray-600 mb-6">
+                            <li><i class="fas fa-check text-primary mr-2"></i>Erreurs et omissions</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Dommages aux clients</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Défense pénale et civile</li>
+                        </ul>
+                        <a href="index.html#contact" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors inline-flex items-center">
+                            <i class="fas fa-file-alt mr-2"></i>Demander un Devis
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Assurance Tous Risques -->
+                <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 animate-on-scroll" data-animation="slide-right">
+                    <div class="lg:w-1/2 max-w-lg">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Assurance Tous Risques" 
+                             class="w-full h-80 object-cover rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
+                    </div>
+                    <div class="lg:w-1/2 max-w-lg">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Assurance Tous Risques</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            La protection la plus complète pour tous vos biens et activités. Couverture étendue 
+                            contre tous les risques non exclus, pour une tranquillité d'esprit totale.
+                        </p>
+                        <ul class="space-y-2 text-gray-600 mb-6">
+                            <li><i class="fas fa-check text-primary mr-2"></i>Protection maximale</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Tous risques non exclus</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Couverture personnalisable</li>
+                        </ul>
+                        <a href="index.html#contact" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors inline-flex items-center">
+                            <i class="fas fa-file-alt mr-2"></i>Demander un Devis
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Assurance Décès -->
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12 animate-on-scroll" data-animation="slide-left">
+                    <div class="lg:w-1/2 max-w-lg">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Assurance Décès" 
+                             class="w-full h-80 object-cover rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
+                    </div>
+                    <div class="lg:w-1/2 max-w-lg lg:ml-auto">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Assurance Décès</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Protégez vos proches financièrement en cas de décès. Capital versé aux bénéficiaires 
+                            pour les aider à faire face aux difficultés financières et maintenir leur niveau de vie.
+                        </p>
+                        <ul class="space-y-2 text-gray-600 mb-6">
+                            <li><i class="fas fa-check text-primary mr-2"></i>Capital garanti aux bénéficiaires</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Couverture décès toutes causes</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Versement rapide du capital</li>
+                        </ul>
+                        <a href="index.html#contact" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors inline-flex items-center">
+                            <i class="fas fa-file-alt mr-2"></i>Demander un Devis
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Assurance Vie -->
+                <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 animate-on-scroll" data-animation="slide-right">
+                    <div class="lg:w-1/2 max-w-lg">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Assurance Vie" 
+                             class="w-full h-80 object-cover rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
+                    </div>
+                    <div class="lg:w-1/2 max-w-lg">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Assurance Vie</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Constituez et faites fructifier votre épargne tout en protégeant vos proches. 
+                            Solutions d'épargne flexibles avec avantages fiscaux et transmission du patrimoine.
+                        </p>
+                        <ul class="space-y-2 text-gray-600 mb-6">
+                            <li><i class="fas fa-check text-primary mr-2"></i>Épargne et investissement</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Avantages fiscaux</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Transmission du patrimoine</li>
+                        </ul>
+                        <a href="index.html#contact" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors inline-flex items-center">
+                            <i class="fas fa-file-alt mr-2"></i>Demander un Devis
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto animate-on-scroll" data-animation="fade-up">
+                <h2 class="text-4xl font-bold text-white mb-6">Prêt à Protéger Ce Qui Compte ?</h2>
+                <p class="text-xl text-blue-100 mb-8">
+                    Contactez nos experts dès aujourd'hui pour une consultation gratuite et personnalisée
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="index.html#contact" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center">
+                        <i class="fas fa-envelope mr-2"></i>Demander un Devis
+                    </a>
+                    <a href="tel:+22892125602" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors inline-flex items-center justify-center">
+                        <i class="fas fa-phone mr-2"></i>+228 92 12 56 02
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="logo.jpg" alt="AssureX Logo" class="h-8 w-8 object-contain">
+                        <span class="text-2xl font-bold">AssureX</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">Votre partenaire de confiance pour tous vos besoins d'assurance au Togo.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#services" class="hover:text-white transition-colors">Assurance Automobile</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Assurance Habitation</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Responsabilité Civile</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Assurance Vie</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p><i class="fas fa-phone mr-2"></i>+228 92 12 56 02</p>
+                        <p><i class="fas fa-envelope mr-2"></i>asurextgpartners@outlook.fr</p>
+                        <p><i class="fas fa-clock mr-2"></i>Lun-Ven: 7:30-18:00</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Lomé, Togo</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Accueil</a></li>
+                        <li><a href="index.html#about" class="hover:text-white transition-colors">À Propos</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors">Nos Services</a></li>
+                        <li><a href="index.html#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 AssureX Insurance Broker. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/22892125602" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors z-50 animate-pulse">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html> 
