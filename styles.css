@@ -1,8 +1,16 @@
 /* Custom Styles for AssureX Landing Page */
 
+/* Prevent horizontal overflow */
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    position: relative;
+}
+
 /* Smooth animations */
 * {
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 /* Custom animations */
@@ -389,20 +397,22 @@ select:focus {
     
     /* WhatsApp button mobile adjustments */
     .whatsapp-btn {
-        width: 48px !important;
-        height: 48px !important;
-        bottom: 16px !important;
-        padding: 0 !important;
+        width: 50px !important;
+        height: 50px !important;
+        bottom: 20px !important;
+        right: 20px !important;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
         z-index: 9999 !important;
     }
     
-    .whatsapp-btn span {
-        display: none !important;
+    .whatsapp-btn i {
+        font-size: 1.4rem !important;
     }
     
-    .whatsapp-btn i {
-        font-size: 1.5rem !important;
-        margin: 0 !important;
+    /* Ensure containers don't overflow */
+    .container {
+        max-width: 100% !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
     }
 } 
