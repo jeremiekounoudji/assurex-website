@@ -389,15 +389,20 @@ select:focus {
     
     /* WhatsApp button mobile adjustments */
     .whatsapp-btn {
-        width: 52px !important;
-        height: 52px !important;
+        width: 48px !important;
+        height: 48px !important;
         bottom: 16px !important;
-        right: 16px !important;
+        padding: 0 !important;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
         z-index: 9999 !important;
     }
     
+    .whatsapp-btn span {
+        display: none !important;
+    }
+    
     .whatsapp-btn i {
-        font-size: 1.4rem !important;
+        font-size: 1.5rem !important;
+        margin: 0 !important;
     }
 } 
