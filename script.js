@@ -301,6 +301,13 @@ document.addEventListener('click', function(e) {
     if (target.closest('a[href^="tel:"]')) {
         trackEvent('phone_click');
     }
+    
+    // Track social media clicks
+    if (target.closest('.social-icon')) {
+        const socialPlatform = target.closest('.social-icon').classList.contains('instagram') ? 'instagram' :
+                              target.closest('.social-icon').classList.contains('linkedin') ? 'linkedin' : 'unknown';
+        trackEvent('social_media_click', { platform: socialPlatform });
+    }
 });
 
 // Track form submissions
