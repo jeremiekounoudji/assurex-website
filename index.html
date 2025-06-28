@@ -44,6 +44,7 @@
                     <a href="#accueil" class="text-gray-700 hover:text-primary transition-colors">Accueil</a>
                     <a href="#about" class="text-gray-700 hover:text-primary transition-colors">À Propos</a>
                     <a href="#services" class="text-gray-700 hover:text-primary transition-colors">Services</a>
+                    <a href="#blog" class="text-gray-700 hover:text-primary transition-colors">Blog</a>
                     <a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
                     <a href="tel:+22892125602" class="text-primary font-semibold">
                         <i class="fas fa-phone mr-2"></i>+228 92125602
@@ -65,6 +66,7 @@
                     <a href="#accueil" class="text-gray-700 hover:text-primary transition-colors">Accueil</a>
                     <a href="#about" class="text-gray-700 hover:text-primary transition-colors">À Propos</a>
                     <a href="#services" class="text-gray-700 hover:text-primary transition-colors">Services</a>
+                    <a href="#blog" class="text-gray-700 hover:text-primary transition-colors">Blog</a>
                     <a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
                     <a href="tel:+22892125602" class="text-primary font-semibold">
                         <i class="fas fa-phone mr-2"></i>+228 92125602
@@ -528,6 +530,125 @@
         </div>
     </section>
 
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 animate-on-scroll" data-animation="fade-up">Notre Blog</h2>
+                <p class="text-xl text-gray-600 mb-8 animate-on-scroll" data-animation="fade-up" data-delay="200">Conseils, actualités et expertise en assurance</p>
+                <div class="w-24 h-1 bg-primary mx-auto animate-on-scroll" data-animation="fade-up" data-delay="300"></div>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Blog Post 1 -->
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-on-scroll" data-animation="fade-up" data-delay="100">
+                        <div class="relative">
+                            <img src="blog1.jpg" alt="Asurex au cœur de votre quotidien" class="w-full h-48 object-cover">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">Assurance Générale</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 hover:text-primary transition-colors">
+                                Asurex, au cœur de votre quotidien
+                            </h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">
+                                Dans un monde en perpétuelle évolution, où les incertitudes font désormais partie du quotidien, choisir la bonne assurance devient un acte de responsabilité...
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">
+                                    <i class="fas fa-calendar mr-2"></i>25 juin 2025
+                                </span>
+                                <button class="text-primary hover:text-primary-dark font-semibold transition-colors" onclick="openBlogModal('blog1')">
+                                    Lire plus <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 2 -->
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-on-scroll" data-animation="fade-up" data-delay="200">
+                        <div class="relative">
+                            <img src="blog2.jpg" alt="L'assurance vie chez Asurex" class="w-full h-48 object-cover">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">Assurance Vie</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 hover:text-primary transition-colors">
+                                L'assurance vie chez Asurex : préparer l'avenir
+                            </h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">
+                                La vie est faite d'imprévus, mais aussi de projets et d'héritages. Comment garantir que nos proches seront protégés demain, même si nous ne sommes plus là ?...
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">
+                                    <i class="fas fa-calendar mr-2"></i>25 juin 2025
+                                </span>
+                                <button class="text-primary hover:text-primary-dark font-semibold transition-colors" onclick="openBlogModal('blog2')">
+                                    Lire plus <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 3 -->
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-on-scroll" data-animation="fade-up" data-delay="300">
+                        <div class="relative">
+                            <img src="blog3.jpg" alt="Professionnels, sécurisez votre avenir" class="w-full h-48 object-cover">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">Assurance Pro</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 hover:text-primary transition-colors">
+                                Professionnels, sécurisez votre avenir avec Asurex
+                            </h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">
+                                Le monde professionnel regorge d'opportunités… mais aussi de risques. Une simple erreur, un malentendu, un accident, et c'est la stabilité d'une entreprise...
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">
+                                    <i class="fas fa-calendar mr-2"></i>25 juin 2025
+                                </span>
+                                <button class="text-primary hover:text-primary-dark font-semibold transition-colors" onclick="openBlogModal('blog3')">
+                                    Lire plus <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center mt-12">
+                    <p class="text-lg text-gray-600 mb-6">Vous avez des questions sur nos services d'assurance ?</p>
+                    <a href="#contact" class="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors inline-flex items-center">
+                        <i class="fas fa-envelope mr-2"></i>Contactez nos experts
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Modals -->
+    <div id="blogModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="sticky top-0 bg-white border-b border-gray-200 p-6 flex justify-between items-center">
+                    <h2 id="modalTitle" class="text-2xl font-bold text-gray-800"></h2>
+                    <button onclick="closeBlogModal()" class="text-gray-500 hover:text-gray-700 text-2xl">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <img id="modalImage" src="" alt="" class="w-full h-64 object-cover rounded-lg mb-6">
+                    <div id="modalContent" class="prose prose-lg max-w-none text-gray-700"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Contact Section -->
     <section id="contact" class="relative py-20">
         <!-- Background Image -->
@@ -707,6 +828,7 @@
                         <li><a href="#accueil" class="text-gray-400 hover:text-white transition-colors">Accueil</a></li>
                         <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">À Propos</a></li>
                         <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#blog" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
                         <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>

@@ -12,6 +12,7 @@ function initializeApp() {
     initFAQ();
     initContactForm();
     initAnimations();
+    initBlogModals();
 }
 
 // Mobile Menu Toggle
@@ -309,8 +310,240 @@ document.addEventListener('submit', function(e) {
     }
 });
 
+// Blog Modal Functions
+function initBlogModals() {
+    // Close modal when clicking outside
+    document.getElementById('blogModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeBlogModal();
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeBlogModal();
+        }
+    });
+}
+
+function openBlogModal(blogId) {
+    const modal = document.getElementById('blogModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalImage = document.getElementById('modalImage');
+    const modalContent = document.getElementById('modalContent');
+    
+    // Blog content data
+    const blogData = {
+        blog1: {
+            title: "Asurex, au cœur de votre quotidien",
+            image: "blog1.jpg",
+            content: `
+                <p class="text-lg font-semibold text-primary mb-4">Votre sécurité, notre priorité.</p>
+                
+                <p class="mb-6">Dans un monde en perpétuelle évolution, où les incertitudes font désormais partie du quotidien, choisir la bonne assurance devient un acte de responsabilité. C'est ici qu'intervient <em>Asurex</em>, bien plus qu'une simple compagnie d'assurance : un partenaire engagé, proche de vous, à chaque étape de la vie.</p>
+
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Une mission claire : protéger ce qui compte pour vous</h3>
+                
+                <p class="mb-6">Depuis sa création, <em>Asurex</em> s'est donné pour mission de couvrir l'essentiel avec une approche humaine et personnalisée. Parce que chaque client est unique, chaque contrat doit l'être aussi. Notre engagement ne se limite pas à fournir des solutions d'assurance : nous nous investissons pleinement pour comprendre vos besoins réels et anticiper les risques avant qu'ils ne surviennent.</p>
+
+                <p class="mb-8">Qu'il s'agisse de votre maison, de votre véhicule, de votre vie ou de votre entreprise, nous construisons avec vous des solutions sur mesure, claires, accessibles et durables.</p>
+
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Une gamme complète pour un quotidien serein</h3>
+                
+                <p class="mb-4">Nos offres couvrent une large variété de domaines afin de répondre aux attentes de tous :</p>
+                
+                <ul class="list-disc list-inside space-y-2 mb-8 text-gray-700">
+                    <li><strong>Assurance automobile</strong> : Pour vous permettre de prendre la route en toute confiance, quelles que soient les circonstances.</li>
+                    <li><strong>Assurance habitation</strong> : Parce que votre foyer est plus qu'un simple toit, nous veillons à sa protection contre les sinistres les plus fréquents (incendie, vol, dégâts des eaux, etc.).</li>
+                    <li><strong>Responsabilité civile</strong> : Une couverture essentielle face aux imprévus qui peuvent engager votre responsabilité, même dans les gestes les plus anodins du quotidien.</li>
+                    <li><strong>Responsabilité professionnelle</strong> : Pour les travailleurs indépendants, les entrepreneurs et toutes les professions exposées aux risques juridiques, nos garanties renforcent votre activité et votre crédibilité.</li>
+                    <li><strong>Assurance tous risques</strong> : Une protection complète et adaptée aux biens les plus sensibles.</li>
+                    <li><strong>Assurance décès et assurance vie</strong> : Pour que l'avenir de vos proches soit à l'abri de toute incertitude, avec une épargne sécurisée et un accompagnement humain.</li>
+                </ul>
+
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Une proximité authentique</h3>
+                
+                <p class="mb-6">Ce qui distingue Asurex, c'est notre capacité à rester proche de nos clients. Nous croyons que la relation de confiance se construit dans la transparence, la réactivité et la bienveillance. Nos conseillers sont formés pour écouter avant de proposer, comprendre avant d'agir.</p>
+
+                <p class="mb-8">Nos bureaux ne sont pas de simples guichets administratifs, ce sont des espaces d'échange où chaque client est accueilli avec attention et respect. Nous utilisons aussi les outils numériques pour faciliter la gestion de vos contrats, sans jamais perdre la chaleur du contact humain.</p>
+
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Témoignages de ceux qui nous font confiance</h3>
+                
+                <blockquote class="border-l-4 border-primary pl-6 italic text-gray-700 mb-4">
+                    « J'ai découvert Asurex après un sinistre automobile. Leur accompagnement m'a vraiment soulagé dans une période difficile. Depuis, je les recommande à tout mon entourage. » – Clarisse, cliente depuis 3 ans.
+                </blockquote>
+
+                <blockquote class="border-l-4 border-primary pl-6 italic text-gray-700 mb-8">
+                    « Grâce à l'assurance vie d'Asurex, j'ai pu constituer une épargne pour mes enfants, tout en bénéficiant d'un conseil fiscal avisé. » – Koffi, entrepreneur.
+                </blockquote>
+
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Innover avec conscience</h3>
+                
+                <p class="mb-6">Chez Asurex, innovation rime avec utilité. Nous développons des solutions intelligentes pour rendre l'assurance plus simple, plus rapide et plus intuitive : applications mobiles, espace client en ligne, devis instantanés… Mais toujours avec une exigence éthique et un respect rigoureux des données personnelles.</p>
+
+                <p class="mb-8">Notre avenir se construit avec vous, dans la co-création, le dialogue et la volonté constante de vous servir mieux.</p>
+
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Conclusion</h3>
+                
+                <p class="mb-4">Asurex, c'est plus qu'un assureur. C'est un compagnon de route, discret mais indispensable, qui veille chaque jour sur ce que vous avez de plus précieux. En nous confiant vos assurances, vous choisissez la tranquillité d'esprit, la stabilité et l'excellence au service de votre quotidien.</p>
+
+                <p class="text-lg font-semibold text-primary">Avec Asurex, vivez chaque jour l'esprit léger.</p>
+            `
+        },
+        blog2: {
+            title: "L'assurance vie chez Asurex : préparer l'avenir",
+            image: "blog2.jpg",
+            content: `
+                <p class="text-lg font-semibold text-primary mb-4">Offrir la sécurité à ceux qu'on aime, c'est l'acte d'amour le plus durable.</p>
+                
+                <p class="mb-6">La vie est faite d'imprévus, mais aussi de projets et d'héritages. Comment garantir que nos proches seront protégés demain, même si nous ne sommes plus là ? Chez <em>Asurex</em>, nous croyons que l'assurance vie ne doit pas être une formule complexe, mais une solution claire, humaine, et alignée sur vos valeurs.</p>
+
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Une vision humaine de l'assurance vie</h3>
+                
+                <p class="mb-4">Contrairement aux idées reçues, l'assurance vie ne se limite pas à la transmission d'un capital. C'est <em>un outil de prévoyance, d'épargne et d'amour.</em></p>
+
+                <p class="mb-4">Avec l'assurance vie <em>Asurex</em>, vous pouvez :</p>
+                
+                <ul class="list-disc list-inside space-y-2 mb-8 text-gray-700">
+                    <li>Mettre à l'abri financièrement vos enfants ou votre conjoint</li>
+                    <li>Préparer votre retraite</li>
+                    <li>Construire une épargne disponible et flexible</li>
+                    <li>Bénéficier d'avantages fiscaux intéressants</li>
+                </ul>
+
+                <p class="mb-8">Le tout en gardant <em>la liberté de choisir vos bénéficiaires</em>, et la maîtrise totale de vos versements.</p>
+
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Une solution adaptée à chaque parcours</h3>
+                
+                <p class="mb-4">Que vous soyez jeune actif, chef de famille ou proche de la retraite, <em>Asurex</em> propose plusieurs types de contrats :</p>
+                
+                <ul class="list-disc list-inside space-y-2 mb-6 text-gray-700">
+                    <li><strong>Assurance vie à capital garanti</strong> : pour sécuriser votre épargne tout en conservant des rendements stables</li>
+                    <li><strong>Assurance vie en unités de compte</strong> : pour ceux qui souhaitent dynamiser leur épargne en fonction de leur profil de risque</li>
+                    <li><strong>Contrats mixte épargne + prévoyance</strong> : pour combiner performance financière et protection immédiate</li>
+                </ul>
+
+                <p class="mb-8">Nos conseillers vous orientent selon vos objectifs de vie, vos ressources, et la nature de vos engagements familiaux.</p>
+
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Transparence, éthique et accompagnement</h3>
+                
+                <p class="mb-4">Chez <em>Asurex</em>, nous savons que parler de la mort ou de l'avenir est une démarche intime. C'est pourquoi nos équipes adoptent une posture de <strong>conseiller bienveillant, jamais intrusif</strong>.</p>
+                
+                <ul class="list-disc list-inside space-y-2 mb-8 text-gray-700">
+                    <li>Pas de jargon obscur</li>
+                    <li>Pas de surprise dans les frais</li>
+                    <li>Une pédagogie claire pour chaque décision</li>
+                    <li>Un accompagnement de longue durée</li>
+                </ul>
+
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Ils ont choisi la paix intérieure</h3>
+                
+                <blockquote class="border-l-4 border-primary pl-6 italic text-gray-700 mb-4">
+                    « Ma mère est partie en laissant tout organisé. Grâce à son assurance vie Asurex, nous avons pu traverser cette épreuve plus sereinement. » – Élodie, 32 ans.
+                </blockquote>
+
+                <blockquote class="border-l-4 border-primary pl-6 italic text-gray-700 mb-8">
+                    « C'est rassurant de savoir que si quelque chose m'arrive, mes enfants auront de quoi poursuivre leurs études sans souci. » – Demba, père de deux enfants.
+                </blockquote>
+
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Conclusion</h3>
+                
+                <p class="mb-4">Préparer l'avenir, c'est un acte d'anticipation… et d'amour. Avec <em>Asurex</em>, votre assurance vie devient un pilier de stabilité pour ceux qui vous sont chers, aujourd'hui et demain.</p>
+
+                <p class="text-lg font-semibold text-primary">Construisez la sécurité de demain avec le cœur tranquille.</p>
+            `
+        },
+        blog3: {
+            title: "Professionnels, sécurisez votre avenir avec Asurex",
+            image: "blog3.jpg",
+            content: `
+                <p class="text-lg font-semibold text-primary mb-4">La sérénité professionnelle commence par une protection intelligente.</p>
+                
+                <p class="mb-6">Le monde professionnel regorge d'opportunités… mais aussi de risques. Une simple erreur, un malentendu, un accident, et c'est la stabilité d'une entreprise ou d'une carrière entière qui peut vaciller. <em>Asurex</em> l'a bien compris : en tant qu'entrepreneur, indépendant ou responsable d'équipe, vous méritez un partenaire qui protège votre avenir avec rigueur, clarté et proximité.</p>
+
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Comprendre les véritables enjeux des professionnels</h3>
+                
+                <p class="mb-4">Chaque métier comporte ses défis. Un consultant en stratégie peut être poursuivi pour un conseil mal interprété. Un architecte peut être tenu responsable de défauts de conception. Un entrepreneur peut voir sa responsabilité engagée en cas d'accident sur un chantier.</p>
+
+                <p class="mb-4">C'est là qu'interviennent les assurances professionnelles de <em>Asurex</em>, conçues sur mesure pour :</p>
+                
+                <ul class="list-disc list-inside space-y-2 mb-8 text-gray-700">
+                    <li><em>Préserver votre réputation</em></li>
+                    <li><em>Protéger vos biens et vos finances</em></li>
+                    <li><em>Renforcer la confiance de vos clients et partenaires</em></li>
+                </ul>
+
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Nos garanties pour les pros</h3>
+                
+                <ul class="list-disc list-inside space-y-3 mb-6 text-gray-700">
+                    <li><strong>Responsabilité Civile Professionnelle</strong> : une couverture essentielle contre les dommages causés à des tiers dans le cadre de vos activités professionnelles (erreurs, omissions, négligences).</li>
+                    <li><strong>Protection juridique</strong> : accompagnement et défense en cas de litiges professionnels.</li>
+                    <li><strong>Assurance des locaux, matériels et équipements</strong> : parce que vos outils de travail sont votre levier de performance.</li>
+                    <li><strong>Responsabilité dirigeant</strong> : une protection personnelle pour les décideurs, face aux décisions sensibles.</li>
+                </ul>
+
+                <p class="mb-8">Chaque contrat est élaboré à vos côtés, selon la nature de vos activités, votre budget et votre exposition aux risques. Nous ne croyons pas aux formules figées, mais à la personnalisation consciente et réfléchie.</p>
+
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Accompagnement humain et vision long terme</h3>
+                
+                <p class="mb-4">Ce qui distingue <em>Asurex</em>, c'est notre approche humaine. Nous ne nous contentons pas de vendre une police d'assurance : nous devenons <strong>le conseiller discret qui veille sur votre activité</strong>.</p>
+
+                <p class="mb-4">Vous bénéficiez :</p>
+                
+                <ul class="list-disc list-inside space-y-2 mb-6 text-gray-700">
+                    <li>D'un diagnostic de risque personnalisé</li>
+                    <li>D'un conseiller dédié</li>
+                    <li>D'une transparence totale sur les garanties, exclusions et prix</li>
+                    <li>D'un service réactif en cas de sinistre</li>
+                </ul>
+
+                <p class="mb-8">Et parce que l'entrepreneuriat est aussi une aventure humaine, nous vous accompagnons dans vos projets, vos transitions, et même votre expansion.</p>
+
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Le mot de nos assurés</h3>
+                
+                <blockquote class="border-l-4 border-primary pl-6 italic text-gray-700 mb-4">
+                    « En tant que photographe indépendant, j'avais toujours cette crainte du matériel volé ou des plaintes injustifiées. Depuis Asurex, je me sens plus libre, plus confiant. » – Mathilde, freelance créative.
+                </blockquote>
+
+                <blockquote class="border-l-4 border-primary pl-6 italic text-gray-700 mb-8">
+                    « Notre cabinet d'architecture a trouvé en Asurex un véritable allié stratégique. Ils comprennent nos enjeux comme si c'était les leurs. » – Jean-Luc, architecte.
+                </blockquote>
+
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Conclusion</h3>
+                
+                <p class="mb-4">Vous n'avez pas à tout porter seul. En confiant la protection de vos activités à <em>Asurex</em>, vous faites le choix d'un partenaire fiable, ancré dans la réalité du terrain, mais aussi tourné vers votre avenir.</p>
+
+                <p class="text-lg font-semibold text-primary">Soyez audacieux, nous assurons vos arrières.</p>
+            `
+        }
+    };
+    
+    const blog = blogData[blogId];
+    if (blog) {
+        modalTitle.textContent = blog.title;
+        modalImage.src = blog.image;
+        modalImage.alt = blog.title;
+        modalContent.innerHTML = blog.content;
+        
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        
+        // Track blog view
+        trackEvent('blog_view', { blog_id: blogId, blog_title: blog.title });
+    }
+}
+
+function closeBlogModal() {
+    const modal = document.getElementById('blogModal');
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+}
+
 // Export functions for global use
 window.toggleMobileMenu = toggleMobileMenu;
 window.toggleFAQ = toggleFAQ;
 window.requestQuote = requestQuote;
-window.callNow = callNow; 
+window.callNow = callNow;
+window.openBlogModal = openBlogModal;
+window.closeBlogModal = closeBlogModal; 

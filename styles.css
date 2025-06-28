@@ -415,4 +415,114 @@ select:focus {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
     }
+}
+
+/* Blog Section Styles */
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.prose {
+    line-height: 1.75;
+}
+
+.prose h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.prose p {
+    margin-bottom: 1rem;
+}
+
+.prose ul {
+    margin-bottom: 1.5rem;
+}
+
+.prose blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    background: #f8fafc;
+    border-radius: 0.5rem;
+}
+
+/* Blog Modal Styles */
+#blogModal .prose {
+    max-width: none;
+}
+
+#blogModal .prose h3 {
+    color: #1f2937;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+#blogModal .prose p {
+    color: #374151;
+    line-height: 1.75;
+}
+
+#blogModal .prose ul li {
+    margin-bottom: 0.5rem;
+}
+
+#blogModal .prose blockquote {
+    border-left: 4px solid #1E40AF;
+    background: #eff6ff;
+    font-style: italic;
+}
+
+/* Blog Card Hover Effects */
+.blog-card {
+    transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Blog Modal Animation */
+#blogModal {
+    backdrop-filter: blur(4px);
+}
+
+#blogModal > div > div {
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Responsive Blog Layout */
+@media (max-width: 1024px) {
+    .blog-section .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-section .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    #blogModal .max-w-4xl {
+        max-width: 95vw;
+    }
+    
+    #blogModal .p-6 {
+        padding: 1rem;
+    }
 } 
