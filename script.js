@@ -114,7 +114,7 @@ Cordialement,
 ${fullName}`);
     
     // Créer le lien mailto
-    const mailtoLink = `mailto:asurextg@gmail.com?subject=${subject}&body=${body}`;
+    const mailtoLink = `mailto:asurextgpartners@gmail.com?subject=${subject}&body=${body}`;
     
     // Ouvrir le client email
     window.location.href = mailtoLink;
